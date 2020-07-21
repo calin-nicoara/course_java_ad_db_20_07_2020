@@ -43,6 +43,26 @@ public class FunctionalInterfacesTest {
         assert checkEven.test(10);
         assert !checkEven.test(11);
     }
+
+    @Test
+    public void testDefaultMethods() {
+        Consumer<String> testConsumer = testString -> System.out.println(testString);
+
+        Consumer<String> stringConsumer = testConsumer.andThen(testString -> System.out.println("Another one: " + testString.toUpperCase()));
+
+        stringConsumer.accept("hello there!");
+
+        Predicate<Integer> isEven = x -> x % 2 == 0;
+
+        assert isEven.test(10);
+        assert !isEven.negate().test(10);
+
+        Function<Integer, Integer> doubleFunc = x -> x *2;
+
+//        doubleFunc.compose(result -> result * 10);
+
+
+    }
 }
 
 

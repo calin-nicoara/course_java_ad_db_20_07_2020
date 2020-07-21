@@ -33,6 +33,8 @@ class LambdaTest {
             System.out.println(label + ": " + value);
         };
         showANumber.showANumber("The number is", 100);
+
+        showANumber.showABigNumber("The number is", 100);
     }
 
     @Test
