@@ -1,10 +1,11 @@
-package ro.esolacad.javaad.designpatterns.di;
+package ro.esolacad.javaad.cleancode.di;
+
+import java.util.Optional;
 
 public class Car {
 
     private final Motor motor;
     private AC airConditioner;
-//    private CarLookService carLookService;
 
     public Car(final Motor motor) {
         this.motor = motor;
@@ -19,6 +20,10 @@ public class Car {
         motor.goFast();
     }
 
+    public Optional<AC> getAirConditioner() {
+        return Optional.ofNullable(airConditioner);
+    }
+
     public void stopCar() {
         System.out.println("Stopping car");
         motor.stopMotor();
@@ -30,5 +35,9 @@ public class Car {
         if(airConditioner != null) {
             airConditioner.coolAir();
         }
+    }
+
+    public void useString(String string) {
+        System.out.println(string.toUpperCase());
     }
 }
