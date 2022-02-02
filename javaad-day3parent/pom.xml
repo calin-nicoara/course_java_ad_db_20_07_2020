@@ -12,7 +12,7 @@
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <custom-property>42.2.5</custom-property>
+        <custom-property>42.2.25</custom-property>
     </properties>
 
     <dependencyManagement>
